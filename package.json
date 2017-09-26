@@ -1,0 +1,19 @@
+{
+  "name": "update-immutable-value",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdemon/update-immutable-value.git"
+  },
+  "author": "Masami Yonehara (hdemon)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hdemon/update-immutable-value/issues"
+  },
+  "homepage": "https://github.com/hdemon/update-immutable-value#readme"
+}
