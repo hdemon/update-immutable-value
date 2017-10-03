@@ -1,18 +1,22 @@
-const update = (properties, originalObj) => {
+const update = (originalObj, properties) => {
   const cloned = Object.assign({}, originalObj);
-  traverse(properties, cloned, (_property, originalProperty, key) => {
-    originalProperty[key] = _property[key];
+  if (isPrimitive(originalObj) && isPrimitive(properties)) {
+    return properties;
+  }
+
+  traverse(properties, cloned, (_properties, _cloned, key) => {
+    _cloned[key] = _properties[key];
   });
   
   return cloned;
 }
 
-const traverse = (properties, originalProperties, callback) => {
+const traverse = (properties, cloned, callback) => {
   Object.keys(properties).forEach((key) => {
     if (isPrimitive(properties[key])) {
-      return callback(properties, originalProperties, key);
+      return callback(properties, cloned, key);
     } else {
-      traverse(properties[key], originalProperties[key], callback);
+      traverse(properties[key], cloned[key], callback);
     }
   })
 }
